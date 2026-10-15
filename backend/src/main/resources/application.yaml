@@ -2,6 +2,16 @@ spring:
   application:
     name: backend
 
+  datasource:
+    url: jdbc:mysql://localhost:3306/${MYSQL_DATABASE:plateforme_cours}
+    username: ${MYSQL_USER:app_user}
+    password: ${MYSQL_PASSWORD:pass}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
 app:
   jwt:
     secret: ${JWT_SECRET:changeme_dev_secret_au_moins_32_caracteres_ici}
